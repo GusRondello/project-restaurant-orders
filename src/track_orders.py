@@ -18,7 +18,10 @@ class TrackOrders:
         )
 
     def get_never_ordered_per_customer(self, customer):
-        pass
+        list = set([item[1] for item in self.__consumed])
+        return list.difference(
+            set([item[1] for item in self.__consumed if item[0] == customer])
+        )
 
     def get_days_never_visited_per_customer(self, customer):
         pass

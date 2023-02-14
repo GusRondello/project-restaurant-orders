@@ -30,7 +30,7 @@ class TrackOrders:
         )
 
     def get_busiest_day(self):
-        pass
+        return st.mode([item[2] for item in self.__consumed])
 
     def get_least_busy_day(self):
         pass

@@ -24,7 +24,10 @@ class TrackOrders:
         )
 
     def get_days_never_visited_per_customer(self, customer):
-        pass
+        days = set([item[2] for item in self.__consumed])
+        return days.difference(
+            set([item[2] for item in self.__consumed if item[0] == customer])
+        )
 
     def get_busiest_day(self):
         pass

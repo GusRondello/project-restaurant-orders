@@ -1,4 +1,8 @@
 import statistics as st
+from collections import Counter
+
+# Collections Counter do Python
+# https://docs.python.org/3/library/collections.html#counter-objects
 
 
 class TrackOrders:
@@ -33,4 +37,5 @@ class TrackOrders:
         return st.mode([item[2] for item in self.__consumed])
 
     def get_least_busy_day(self):
-        pass
+        least_busy = Counter([item[2] for item in self.__consumed])
+        return list(least_busy)[-1]
